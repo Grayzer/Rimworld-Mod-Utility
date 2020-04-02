@@ -16,10 +16,12 @@
     Friend RimLocModFullPath As String()
     Friend RimSteamModName As String()
     Friend RimLocModName As String()
-    Friend ModNames() As (String, String, String)
+    Friend ModNames() As (String, String, String)   '_name, _path, _id
     Friend CountSteamMods As Integer = 0
     Friend CountWorkMods As Integer = 0
     Friend PathDataDir As String = "f:\GitHub\Rim Utility\Data\"
+    Friend XTest() As (Id As String, Name As String, Path As String)
+
 
     Public Function CheckDataDir(_modID As String) As Boolean
         If IO.Directory.Exists(PathDataDir + _modID) Then
@@ -42,7 +44,6 @@
             For i = 0 To xxx - 1
                 If ddd.ElementAt(i).Length > lll Then
                     ddd(i) = ddd.ElementAt(i).Substring(lll + 1)
-                    'ddd(i) = Mid(ddd.ElementAt(i), 1, Len(ddd.ElementAt(i)) - 4).ToString
                 End If
             Next
 
@@ -64,28 +65,8 @@
         Return (True)
     End Function
     Public Function SortMods() As Boolean
-        'Dim _item1 As String   'сортируем список модов методом пузырька
-        'Dim _item2 As String
-        'Dim _item3 As String
-        'For i = 0 To CountSteamMods + CountWorkMods - 1
-        '    For z = i + 1 To CountSteamMods + CountWorkMods - 1
-        '        If ModNames(z).Item1 < ModNames(i).Item1 Then
-        '            _item1 = ModNames(i).Item1
-        '            _item2 = ModNames(i).Item2
-        '            _item3 = ModNames(i).Item3
-        '            ModNames(i).Item1 = ModNames(z).Item1
-        '            ModNames(i).Item2 = ModNames(z).Item2
-        '            ModNames(i).Item3 = ModNames(z).Item3
-        '            ModNames(z).Item1 = _item1
-        '            ModNames(z).Item2 = _item2
-        '            ModNames(z).Item3 = _item3
-        '        End If
-        '    Next
-        'Next
-        Dim z = ModNames.OrderBy(Function(s) s.Item1)   'а это вариант сортировки через ордер. но пузырьком красивее...
+        Dim z = ModNames.OrderBy(Function(s) s.Item1)
         ModNames = z.ToArray
-
-
         Return (True)
     End Function
     Public Function RimLang() As Boolean
@@ -216,30 +197,29 @@
         Return (True)
     End Function
 
+    Public Function CheckRegSteam() As Boolean
+        If My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Valve\Steam", "SteamPath", Nothing) Is Nothing Then
+            ToolStripStatusLabel1.Text = "Steam: не найден."
+            Return (False)
+        Else
+            PathSteam = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Valve\Steam", "SteamPath", Nothing)
+            ToolStripStatusLabel1.Text = "Steam: установлен."
+            Return (True)
+        End If
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    End Function
+
+    Public Function CheckRimSteam() As Boolean
         Dim aaa As String = ""
         Dim bbb As Integer = 0
 
-        If My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Valve\Steam", "SteamPath", Nothing) Is Nothing Then
-            SteamEnable = False
-            ToolStripStatusLabel1.Text = "Steam: не найден."
-        Else
-            SteamEnable = True
-            PathSteam = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Valve\Steam", "SteamPath", Nothing)
-            ToolStripStatusLabel1.Text = "Steam: установлен."
-        End If
-
         If My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Valve\Steam\Apps\294100", "Installed", Nothing) Is Nothing Then
-            SteamRimEnable = False
             ToolStripStatusLabel2.Text = "Rimword: не найден."
+            Return (False)
         Else
             If My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Valve\Steam\Apps\294100", "Installed", Nothing) = 1 Then
-                SteamRimEnable = True
                 ToolStripStatusLabel2.Text = "Rimword: установлен."
-
                 Dim zzz = My.Computer.FileSystem.ReadAllText(PathSteam + "\config\config.vdf")
-
                 bbb = InStr(zzz, "BaseInstallFolder_1")
                 If bbb > 0 Then
                     aaa = Trim(zzz.Substring(bbb + 22))
@@ -259,20 +239,24 @@
                     Else
                         ToolStripStatusLabel3.Text = "Версия игры: неизвестна"
                     End If
-
-
-
                 End If
-
-
             End If
-
-
+            Return (True)
         End If
+
+    End Function
+
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        SteamEnable = CheckRegSteam()
+        SteamRimEnable = CheckRimSteam()
         RimLang()
         FillModList()
         ListBox1.SelectedIndex = 0
         getmods()
+
+
 
     End Sub
 

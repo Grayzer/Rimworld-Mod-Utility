@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Форма переопределяет dispose для очистки списка компонентов.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,12 @@ Partial Class Form1
     'Примечание: следующая процедура является обязательной для конструктора форм Windows Forms
     'Для ее изменения используйте конструктор форм Windows Form.  
     'Не изменяйте ее в редакторе исходного кода.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.ListBox2 = New System.Windows.Forms.ListBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -35,8 +37,6 @@ Partial Class Form1
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -68,6 +68,25 @@ Partial Class Form1
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Language"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'ListBox2
+        '
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.Items.AddRange(New Object() {"Список найденных языков"})
+        Me.ListBox2.Location = New System.Drawing.Point(298, 111)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.ScrollAlwaysVisible = True
+        Me.ListBox2.Size = New System.Drawing.Size(270, 368)
+        Me.ListBox2.TabIndex = 16
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(298, 85)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.ReadOnly = True
+        Me.TextBox4.Size = New System.Drawing.Size(674, 20)
+        Me.TextBox4.TabIndex = 15
+        Me.TextBox4.Text = "Найден ли перевод в базе"
         '
         'TextBox3
         '
@@ -156,25 +175,6 @@ Partial Class Form1
         Me.ToolStripStatusLabel4.Name = "ToolStripStatusLabel4"
         Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(95, 17)
         Me.ToolStripStatusLabel4.Text = "Готово к работе"
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(298, 85)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.ReadOnly = True
-        Me.TextBox4.Size = New System.Drawing.Size(674, 20)
-        Me.TextBox4.TabIndex = 15
-        Me.TextBox4.Text = "Найден ли перевод в базе"
-        '
-        'ListBox2
-        '
-        Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Items.AddRange(New Object() {"Список найденных языков"})
-        Me.ListBox2.Location = New System.Drawing.Point(298, 111)
-        Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.ScrollAlwaysVisible = True
-        Me.ListBox2.Size = New System.Drawing.Size(270, 368)
-        Me.ListBox2.TabIndex = 16
         '
         'Form1
         '
