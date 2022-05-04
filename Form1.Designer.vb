@@ -24,6 +24,18 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.ListBox4 = New System.Windows.Forms.ListBox()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ListBox3 = New System.Windows.Forms.ListBox()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -54,6 +66,18 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.RadioButton5)
+        Me.TabPage1.Controls.Add(Me.RadioButton4)
+        Me.TabPage1.Controls.Add(Me.RadioButton3)
+        Me.TabPage1.Controls.Add(Me.RadioButton2)
+        Me.TabPage1.Controls.Add(Me.RadioButton1)
+        Me.TabPage1.Controls.Add(Me.ListBox4)
+        Me.TabPage1.Controls.Add(Me.Button5)
+        Me.TabPage1.Controls.Add(Me.Button4)
+        Me.TabPage1.Controls.Add(Me.Button3)
+        Me.TabPage1.Controls.Add(Me.Button2)
+        Me.TabPage1.Controls.Add(Me.Button1)
+        Me.TabPage1.Controls.Add(Me.ListBox3)
         Me.TabPage1.Controls.Add(Me.ListBox2)
         Me.TabPage1.Controls.Add(Me.TextBox4)
         Me.TabPage1.Controls.Add(Me.TextBox3)
@@ -69,6 +93,120 @@ Partial Class Form1
         Me.TabPage1.Text = "Language"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'RadioButton5
+        '
+        Me.RadioButton5.AutoSize = True
+        Me.RadioButton5.Location = New System.Drawing.Point(574, 203)
+        Me.RadioButton5.Name = "RadioButton5"
+        Me.RadioButton5.Size = New System.Drawing.Size(259, 17)
+        Me.RadioButton5.TabIndex = 30
+        Me.RadioButton5.Text = "Генерировать XPath на основе другого языка"
+        Me.RadioButton5.UseVisualStyleBackColor = True
+        '
+        'RadioButton4
+        '
+        Me.RadioButton4.AutoSize = True
+        Me.RadioButton4.Location = New System.Drawing.Point(574, 180)
+        Me.RadioButton4.Name = "RadioButton4"
+        Me.RadioButton4.Size = New System.Drawing.Size(268, 17)
+        Me.RadioButton4.TabIndex = 30
+        Me.RadioButton4.Text = "Генерировать Injected на основе другого языка"
+        Me.RadioButton4.UseVisualStyleBackColor = True
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(574, 157)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(207, 17)
+        Me.RadioButton3.TabIndex = 30
+        Me.RadioButton3.Text = "Генерировать XPath на основе Defs"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(574, 134)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(201, 17)
+        Me.RadioButton2.TabIndex = 30
+        Me.RadioButton2.Text = "Генерировать Keys на основе Defs"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Checked = True
+        Me.RadioButton1.Location = New System.Drawing.Point(574, 111)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(216, 17)
+        Me.RadioButton1.TabIndex = 30
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Генерировать Injected на основе Defs"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'ListBox4
+        '
+        Me.ListBox4.FormattingEnabled = True
+        Me.ListBox4.Items.AddRange(New Object() {"Результаты анализа"})
+        Me.ListBox4.Location = New System.Drawing.Point(298, 265)
+        Me.ListBox4.Name = "ListBox4"
+        Me.ListBox4.ScrollAlwaysVisible = True
+        Me.ListBox4.Size = New System.Drawing.Size(270, 134)
+        Me.ListBox4.TabIndex = 28
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(574, 376)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(397, 23)
+        Me.Button5.TabIndex = 22
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(574, 347)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(397, 23)
+        Me.Button4.TabIndex = 21
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(574, 318)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(397, 23)
+        Me.Button3.TabIndex = 20
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(574, 289)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(397, 23)
+        Me.Button2.TabIndex = 19
+        Me.Button2.Text = "Запуск генерации"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(574, 260)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(397, 23)
+        Me.Button1.TabIndex = 18
+        Me.Button1.Text = "Полный анализ мода"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'ListBox3
+        '
+        Me.ListBox3.FormattingEnabled = True
+        Me.ListBox3.Items.AddRange(New Object() {"Логи"})
+        Me.ListBox3.Location = New System.Drawing.Point(298, 410)
+        Me.ListBox3.Name = "ListBox3"
+        Me.ListBox3.ScrollAlwaysVisible = True
+        Me.ListBox3.Size = New System.Drawing.Size(695, 82)
+        Me.ListBox3.TabIndex = 17
+        '
         'ListBox2
         '
         Me.ListBox2.FormattingEnabled = True
@@ -76,7 +214,7 @@ Partial Class Form1
         Me.ListBox2.Location = New System.Drawing.Point(298, 111)
         Me.ListBox2.Name = "ListBox2"
         Me.ListBox2.ScrollAlwaysVisible = True
-        Me.ListBox2.Size = New System.Drawing.Size(270, 368)
+        Me.ListBox2.Size = New System.Drawing.Size(270, 147)
         Me.ListBox2.TabIndex = 16
         '
         'TextBox4
@@ -131,7 +269,7 @@ Partial Class Form1
         Me.ListBox1.Location = New System.Drawing.Point(6, 36)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.ScrollAlwaysVisible = True
-        Me.ListBox1.Size = New System.Drawing.Size(263, 446)
+        Me.ListBox1.Size = New System.Drawing.Size(263, 459)
         Me.ListBox1.TabIndex = 7
         '
         'TabPage2
@@ -146,9 +284,9 @@ Partial Class Form1
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel3, Me.ToolStripStatusLabel4})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 542)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 545)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1031, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1034, 22)
         Me.StatusStrip1.TabIndex = 6
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -180,7 +318,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1031, 564)
+        Me.ClientSize = New System.Drawing.Size(1034, 567)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -212,4 +350,16 @@ Partial Class Form1
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents ListBox2 As ListBox
     Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents ListBox4 As ListBox
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents ListBox3 As ListBox
+    Friend WithEvents RadioButton5 As RadioButton
+    Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton1 As RadioButton
 End Class

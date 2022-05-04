@@ -19,7 +19,7 @@
     Friend ModNames() As (String, String, String)   '_name, _path, _id
     Friend CountSteamMods As Integer = 0
     Friend CountWorkMods As Integer = 0
-    Friend PathDataDir As String = "f:\GitHub\Rim Utility\Data\"
+    Friend PathDataDir As String = "d:\GitHub\Rim Utility\Data\"
     Friend XTest() As (Id As String, Name As String, Path As String)
 
 
@@ -264,4 +264,36 @@
         getmods()
     End Sub
 
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton5.CheckedChanged, RadioButton4.CheckedChanged, RadioButton3.CheckedChanged, RadioButton2.CheckedChanged, RadioButton1.CheckedChanged
+        If RadioButton1.Checked Then
+            RadioButton2.Checked = False
+            RadioButton3.Checked = False
+            RadioButton4.Checked = False
+            RadioButton5.Checked = False
+        End If
+        If RadioButton2.Checked Then
+            RadioButton1.Checked = False
+            RadioButton3.Checked = False
+            RadioButton4.Checked = False
+            RadioButton5.Checked = False
+        End If
+        If RadioButton3.Checked Then
+            RadioButton1.Checked = False
+            RadioButton2.Checked = False
+            RadioButton4.Checked = False
+            RadioButton5.Checked = False
+        End If
+        If RadioButton4.Checked Then
+            RadioButton1.Checked = False
+            RadioButton2.Checked = False
+            RadioButton3.Checked = False
+            RadioButton5.Checked = False
+        End If
+        If RadioButton5.Checked Then
+            RadioButton1.Checked = False
+            RadioButton2.Checked = False
+            RadioButton3.Checked = False
+            RadioButton4.Checked = False
+        End If
+    End Sub
 End Class
